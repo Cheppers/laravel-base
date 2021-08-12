@@ -1,0 +1,31 @@
+{
+    "name": "cheppers/laravel-base",
+    "description": "This is the description of the package.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [{
+        "name": "Norbert Mozsar",
+        "email": "norbert.mozsar@cheppers.com"
+    }],
+    "autoload": {
+        "psr-4": {
+            "Cheppers\\LaravelBase\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+        }
+    },
+    "require": {
+        "ext-json": "*",
+        "league/json-guard": "^1.0"
+    },
+    "require-dev": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cheppers\\LaravelBase\\Providers\\PackageServiceProvider"
+            ]
+        }
+    }
+}
