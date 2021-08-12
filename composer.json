@@ -18,7 +18,8 @@
     },
     "require": {
         "ext-json": "*",
-        "league/json-guard": "^1.0"
+        "league/json-guard": "^1.0",
+        "spatie/laravel-fractal": "5.8.1"
     },
     "require-dev": {},
     "extra": {
