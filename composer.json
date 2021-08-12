@@ -22,10 +22,5 @@
     },
     "require-dev": {},
     "extra": {
-        "laravel": {
-            "providers": [
-                "Cheppers\\LaravelBase\\Providers\\PackageServiceProvider"
-            ]
-        }
     }
 }
