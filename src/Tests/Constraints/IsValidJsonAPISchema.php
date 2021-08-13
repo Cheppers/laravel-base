@@ -2,8 +2,8 @@
 
 namespace Cheppers\LaravelBase\Tests\Constraints;
 
-use League\JsonGuard\Validator;
 use PHPUnit\Framework\Constraint\Constraint;
+use JsonSchema\Validator;
 
 class IsValidJsonAPISchema extends Constraint
 {
@@ -11,8 +11,9 @@ class IsValidJsonAPISchema extends Constraint
     public function matches($other):bool
     {
         $data = json_decode($other);
-        $validator = new Validator($data, (object)['$ref' => 'file://' . __DIR__ . '/JsonAPISchema.json']);
-        return $validator->passes();
+        $validator = new Validator();
+        $validator->validate($data, (object)['$ref' => 'file://' . __DIR__ . '/JsonAPISchema.json']);
+        return $validator->isValid();
     }
 
     /**

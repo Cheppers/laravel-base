@@ -2,7 +2,7 @@
 
 namespace Cheppers\LaravelBase\Tests\Constraints;
 
-use League\JsonGuard\Validator;
+use JsonSchema\Validator;
 use PHPUnit\Framework\Constraint\Constraint;
 
 class IsValidJsonSchema extends Constraint
@@ -26,11 +26,12 @@ class IsValidJsonSchema extends Constraint
      */
     public function matches($other):bool
     {
-        $validator = new Validator($other, $this->schema);
-        if ($validator->passes()) {
+        $validator = new Validator();
+        $validator->validate($other, $this->schema);
+        if ($validator->isValid()) {
             return true;
         }
-        foreach ($validator->errors() as $error) {
+        foreach ($validator->getErrors() as $error) {
             throw new \PHPUnit_Framework_AssertionFailedError($error->getDataPath() . ': ' . $error->getMessage());
         }
         return false;
