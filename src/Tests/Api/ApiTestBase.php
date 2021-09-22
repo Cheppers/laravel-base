@@ -39,7 +39,7 @@ class ApiTestBase extends TestCase
 
     protected function login($email, $password)
     {
-        $response = $this->postJsonRequest(
+        $response = $this->postJson(
             'api/user/login',
             [
                 'data' => [
