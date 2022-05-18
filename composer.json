@@ -19,7 +19,7 @@
     "require": {
         "ext-json": "*",
         "justinrainbow/json-schema": "^5.2",
-        "spatie/laravel-fractal": "5.8.1"
+        "spatie/laravel-fractal": "^6.0.2"
     },
     "require-dev": {},
     "extra": {
